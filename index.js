@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 // It is important that this stays at the bottom , other wise it will override your other pages!!!
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
+    res.render('error404')
 })
 
 
