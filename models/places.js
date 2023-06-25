@@ -23,4 +23,4 @@ let places = [{
     state: 'NV',
     cuisines: 'Italian',
     pic: '/images/pasta.jpg'
-  }]   
+  }]
