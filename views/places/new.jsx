@@ -2,7 +2,7 @@ const React = require('react')
 const Def = require('../default')
 
 function new_form(data) {
-    let message = ''
+    let message = 'Validation Error:'
         if (data.message) {
             message = (
                 <h4 className="alert-danger">
