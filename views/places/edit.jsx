@@ -44,7 +44,7 @@ function edit_form (data) {
                             value={data.place.state} />
                     </div>
                     <div className="form-group col-sm-4">
-                        <label htmlFor="founded">Founding Year</label>
+                        <label htmlFor="founded">Founded</label>
                         <input 
                             className="form-control" 
                             id="founded" 

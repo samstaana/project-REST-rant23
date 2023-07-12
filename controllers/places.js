@@ -61,7 +61,10 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+    res.redirect('/places')
+  })
 })
 
 router.get('/:id/edit', (req, res) => {
@@ -101,7 +104,15 @@ router.post('/:id/comment', (req, res) => {
 })
 
 router.delete('/:id/comment/:commentId', (req, res) => {
-    res.send('GET /places/:id/comment/:commentId stub')
+    db.Comment.findByIdAndDelete(req.params.commentId)
+        .then(() => {
+            console.log('Success')
+            res.redirect(`/places/${req.params.id}`)
+        })
+        .catch(err => {
+            console.log('err', err)
+            res.render('error404')
+        })
 })
 
 module.exports = router
